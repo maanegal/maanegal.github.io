@@ -3,7 +3,7 @@
 
 <channel>
   <title>Driftstatus for </title>
-  <link>https://www.examplcomdk</link>
+  <link>https://www.example.com</link>
   <!-- REPLACE!! -->
   <atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml" />
   <description>Beskeder om driftstatus for applikationer og services.</description>
