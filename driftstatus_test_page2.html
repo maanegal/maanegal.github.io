@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <title>Driftstatus for KB</title>
+        <meta charset="utf-8">
+        
+<style>
+/* Normalization */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+/****** Elad Shechter's RESET *******/
+/*** box sizing border-box for all elements ***/
+*,
+*::before,
+*::after{box-sizing:border-box;}a{text-decoration:none; color:inherit; cursor:pointer;}
+button{background-color:transparent; color:inherit; border-width:0; padding:0; cursor:pointer;}
+ul, ol, dd{margin:0; padding:0; list-style:none;}
+h1, h2, h3, h4, h5, h6{margin:0; font-size:inherit; font-weight:inherit;}
+p{margin:0;}
+
+/* ACTUAL STYLING */
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+body {
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 1260px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+/*
+  Your use of the content in the files referenced here is subject to the terms of the license at https://aka.ms/fabric-assets-license
+*/
+/*@font-face {
+  font-family: 'FabricMDL2Icons';
+  src: url('fabric-icons.woff') format('woff');
+}*/
+
+
+@font-face {
+    font-family: 'FabricMDL2Icons';
+    src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ms-Icon, .card-btn:after, .category h2::before, #all_display_btn:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'FabricMDL2Icons';
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*
+.ms-Icon--Accept:before { content: "\E8FB"; }
+.ms-Icon--Add:before { content: "\E710"; }
+.ms-Icon--Calendar:before { content: "\E787"; }
+.ms-Icon--ChevronRightMed:before { content: "\E974"; }
+.ms-Icon--Info:before { content: "\E946"; }
+*/
+
+
+header, .outer-container {
+    margin: 0 auto;
+}
+
+header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    padding-bottom: 1rem;
+    letter-spacing: 0.0125em;
+}
+header h1 {
+    display: none;
+}
+
+header aside {
+    color: #6a6a6a;
+    font-size: 11px;
+    font-style: normal;
+}
+
+#all_display_btn {
+	cursor: pointer;
+	user-select: none;
+	transition: all .15s ease-in;
+	font-weight: 600;
+	opacity: 1;
+	border-radius: 0;
+	background: rgb(17, 100, 102);
+	color: #fff;
+	border: 0;
+	text-align: center;
+	width: 10rem;
+	padding: .5rem 0;
+	font-size: .85rem;
+}
+#all_display_btn:before {
+    content: "\E738";
+    font-size: 10px;
+    margin-right: 9px;
+}
+#all_display_btn.collapsed:before {
+    content: "\E710";
+}
+
+#all_display_btn:hover {
+  box-shadow: inset 0 0 3rem rgba(0,0,0,0.3);
+  background: rgb(17, 100, 102);
+}
+
+.outer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.category {
+	flex-basis: 100%;
+	margin: 1rem 0;
+    position: relative;
+}
+@media (min-width: 568px) {
+  .category {
+    flex-basis: 49%;
+  }
+}
+@media (min-width: 1024px) {
+  .category {
+    flex-basis: 24%;
+  }
+}
+
+.category h2 {
+  width: 100%;
+  line-height: 1;
+  font-weight: 600;
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.category h2::before {
+    content: "";
+    display: inline-block;
+    margin-right: .75em;
+    font-size: 16px;
+}
+.category.problems h2::before {
+	content: "\E7BA";
+}
+.category.planned h2::before {
+    content: "\E787";
+}
+.category.solved h2::before {
+    content: "\E8FB";
+}
+.category.info h2::before {
+    content: "\E946";
+}
+
+
+
+.category::before {
+	content: "";
+	width: 100%;
+	height: 4px;
+	background: hsl(0, 0%, 32%);
+	position: absolute;
+	top: 30px;
+	left: 0;
+    opacity: .8;
+    transition: opacity .125s ease;
+}
+.category:hover::before {
+    opacity: 1;
+}
+.category.problems {
+	background: #661111;
+}
+.category.planned {
+    background: #2f7f80;
+}
+.category.solved {
+    background: #116612;
+}
+.category.info {
+    background: #121166;
+}
+
+.category .category-counter {
+    background: #edebe9;
+    border-radius: 100%;
+    color: #3b3a39;
+	display: inline-block;
+	font-weight: 700;
+	text-align: center;
+	line-height: 26px;
+	width: 26px;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  padding: 0;
+}
+
+.card-container p {
+	opacity: .9;
+	padding: 0;
+	font-weight: 300;
+}
+
+.card.collapsed .card-body {
+  display: none;
+}
+
+.card {
+  margin: .5rem 0;
+  flex-basis: 100%;
+  height: max-content;
+  border: 1px solid rgb(237, 235, 233);
+    border-radius: 2px;
+    transition: box-shadow 0.5s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px, rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+}
+
+.card:hover {
+	box-shadow: rgba(0, 0, 0, 0.133) 0px 3.2px 7.2px 0px, rgba(0, 0, 0, 0.11) 0px 0.6px 1.8px 0px;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  padding: 4px 10px 8px 10px;
+  transition: background .2s ease;
+}
+.card-head:hover {
+	background: #faf9f8;
+}
+
+.card-body {
+	border-top: 2px solid rgb(237, 235, 233);
+}
+
+.card-service {
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    box-orient: vertical;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: bold;
+    padding: 7px 0;
+}
+
+.card-subject {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+.card.collapsed .card-subject {
+  max-height: 2.5rem;
+  overflow: hidden;
+}
+
+.card-status {
+ display: none;
+}
+
+.card-time-list {
+    padding: 9px 10px 0px 10px;
+  display: flex;
+
+}
+
+.card-time-list-col:first-child {
+    display: flex;
+    justify-content: space-between;
+    flex: 2;
+}
+.card-time-list-col:last-child {
+    flex: 1;
+}
+
+.card-time, .card-time-stacked {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-time {
+    margin-right: 15px;
+}
+
+.card-time-label {
+  font-size: 12px;
+  text-overflow: ellipsis;
+overflow: hidden;
+color: #515151;
+margin-top: 5px;
+font-weight: bold;
+}
+
+.card-time-stamp {
+  font-size: 12px;
+  color: #515151;
+  text-overflow: ellipsis;
+overflow: hidden;
+font-weight: 600;
+}
+
+.card-message {
+	margin-bottom: 9px;
+	font-size: 14px;
+	line-clamp: 10;
+	-webkit-line-clamp: 10;
+	text-overflow: ellipsis;
+	font-weight: lighter;
+	line-height: 17px;
+	padding: 9px 10px 0px 10px;
+}
+
+.card-btn {
+  color: #000;
+  font-weight: 500;
+  font-size: 18px;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+.card-btn::after {
+  content: "\E974";
+  transition: transform 0.1s linear 0s;
+  transform: rotate(90deg);
+}
+.card.collapsed .card-btn::after {
+  transform: rotate(0deg);
+}
+.card-btn:hover::after {
+  opacity: 1;
+}
+
+</style>
+
+    </head>
+    <body>
+        <header>
+            <aside>Sidst opdateret: 02-10-2020, kl. 08:06</aside>
+            <h1>Driftstatus for KB</h1>
+            <div id="all_display_btn" class="" data-open="Åbn alle beskeder" data-close="Luk alle beskeder">Åbn/luk alle beskeder</div>
+        </header>
+
+        <div class="outer-container">        
+            <div class="category problems">
+                <h2>Ude af drift<span class="category-counter">1</span></h2>
+                
+                <div class="card-container">
+                                        <article class="card red  grid">
+                      <div class="card-head">
+                        <div class="card-head-col">
+                          <div class="card-service">Netværk</div>
+                          <div class="card-subject">Kæmpestore problemer</div>
+                        </div>
+                        <div class="card-head-col">
+                          <div class="card-status">Igangværende</div>
+                        </div>
+                        <div class="card-btn" title="Vis/skjul detaljer"></div>
+                      </div>
+                      <div class="card-body">
+                        <div class="card-time-list">
+                          <div class="card-time-list-col">
+                            
+                              <div class="card-time">
+                                <span class="card-time-label">Fra:</span>
+                                <span class="card-time-stamp">17-09-2020, kl. 11:00</span>
+                              </div>
+                            
+                            
+                              <div class="card-time">
+                                <span class="card-time-label">Til:</span>
+                                <span class="card-time-stamp">31-10-2020, kl. 13:00</span>
+                              </div>
+                            
+                          </div>
+                          
+                          <div class="card-time-list-col">
+                            <div class="card-time-stacked">
+                              <span class="card-time-label">Næste opfølgning:</span>
+                              <span class="card-time-stamp">30-09-2020, kl. 12:00</span>
+                            </div>
+                          </div>
+                          
+                        </div>
+                        <div class="card-message">
+                          <br>Det virker overhovedet ikke.
+                        </div>
+                      </div>
+                    </article>
+                </div>
+                
+            </div>
+            <div class="category planned">
+                <h2>Planlagte ændringer<span class="category-counter">0</span></h2>
+                
+            </div>
+            <div class="category solved">
+                <h2>Løste problemer<span class="category-counter">2</span></h2>
+                
+                <div class="card-container">
+                                        <article class="card green  grid">
+                      <div class="card-head">
+                        <div class="card-head-col">
+                          <div class="card-service">Bibliotekssystemet</div>
+                          <div class="card-subject">test emne</div>
+                        </div>
+                        <div class="card-head-col">
+                          <div class="card-status">Afsluttet</div>
+                        </div>
+                        <div class="card-btn" title="Vis/skjul detaljer"></div>
+                      </div>
+                      <div class="card-body">
+                        <div class="card-time-list">
+                          <div class="card-time-list-col">
+                            
+                              <div class="card-time">
+                                <span class="card-time-label">Fra:</span>
+                                <span class="card-time-stamp">31-08-2020, kl. 11:00</span>
+                              </div>
+                            
+                            
+                              <div class="card-time">
+                                <span class="card-time-label">Til:</span>
+                                <span class="card-time-stamp">30-09-2020, kl. 13:00</span>
+                              </div>
+                            
+                          </div>
+                          
+                        </div>
+                        <div class="card-message">
+                          Sagen er løst og nu lukket<br><br><br>Overstået<br>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="card green  grid">
+                      <div class="card-head">
+                        <div class="card-head-col">
+                          <div class="card-service">Netværk</div>
+                          <div class="card-subject">Test - løst problem</div>
+                        </div>
+                        <div class="card-head-col">
+                          <div class="card-status">Afsluttet</div>
+                        </div>
+                        <div class="card-btn" title="Vis/skjul detaljer"></div>
+                      </div>
+                      <div class="card-body">
+                        <div class="card-time-list">
+                          <div class="card-time-list-col">
+                            
+                              <div class="card-time">
+                                <span class="card-time-label">Fra:</span>
+                                <span class="card-time-stamp">09-09-2020, kl. 12:00</span>
+                              </div>
+                            
+                            
+                              <div class="card-time">
+                                <span class="card-time-label">Til:</span>
+                                <span class="card-time-stamp">11-09-2020, kl. 14:00</span>
+                              </div>
+                            
+                          </div>
+                          
+                        </div>
+                        <div class="card-message">
+                          <br>Lorem ipsum dolor sit amet.<br><br>I dette tilfælde er der ikke brugt ret meget af skabelonen<br><br>
+                        </div>
+                      </div>
+                    </article>
+                </div>
+                
+            </div>
+            <div class="category info">
+                <h2>Generel information<span class="category-counter">0</span></h2>
+                
+            </div>
+        </div>
+         
+    <script>
+        document.querySelectorAll('.card-head').forEach(function(button) {
+            button.addEventListener('click', function() {
+              button.parentElement.classList.toggle('collapsed');
+            }); 
+        });
+        const all_display_btn = document.querySelector('#all_display_btn');
+        if (all_display_btn.classList.contains('collapsed')) {
+            all_display_btn.innerHTML = all_display_btn.dataset.open;
+        } else {
+            all_display_btn.innerHTML = all_display_btn.dataset.close;
+        }
+        all_display_btn.addEventListener('click', function() {
+            if (all_display_btn.classList.contains('collapsed')) {
+                all_display_btn.classList.remove('collapsed');
+                all_display_btn.innerHTML = all_display_btn.dataset.close;
+                document.querySelectorAll('.card').forEach(function(button) {
+                    button.classList.remove('collapsed');
+                }); 
+            } else {
+                all_display_btn.classList.add('collapsed');
+                all_display_btn.innerHTML = all_display_btn.dataset.open;
+                document.querySelectorAll('.card').forEach(function(button) {
+                    button.classList.add('collapsed');
+                }); 
+            }
+        });
+    </script>
+    </body>
+</html>
