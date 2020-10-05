@@ -2,52 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
 <channel>
-  <title>Driftstatus for </title>
+  <title>Driftstatus</title>
   <link>https://www.example.dk</link>
   <!-- REPLACE!! -->
-  <atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml" />
+  <atom:link href="https://example.com/rss.xml" rel="self" type="application/rss+xml" />
   <description>Beskeder om driftstatus for applikationer og services.</description>
   <language>da</language>
-  <lastBuildDate>Mon, 05 Oct 2020 11:34:40 +0200</lastBuildDate>
+  <lastBuildDate>Mon, 05 Oct 2020 11:45:11 +0200</lastBuildDate>
   <ttl>20</ttl>
     <item>
     <title>Kæmpestore problemer</title>
-    <author>Ude af drift</author>
-    <link>https://example.com</link>
+    <author>Opdateret:</author>
     <description>
-    Fra: 17-09-2020, kl. 11:00 ―
-    Til: 31-10-2020, kl. 13:00 ―
-    Næste opfølgning: 30-09-2020, kl. 12:00 ―
+    Fra 17-09-2020, kl. 11:00
+    til 31-10-2020, kl. 13:00. 
+    Næste opfølgning: 30-09-2020, kl. 12:00. 
      Det virker overhovedet ikke.
     </description>
     <pubDate>Thu, 17 Sep 2020 11:00:00 +0200</pubDate>
-    <category>Netværk</category>
+    <category>Netværk | Ude af drift</category>
   </item>
   <item>
     <title>test emne</title>
-    <author>Løste problemer</author>
-    <link>https://example.com</link>
+    <author>Opdateret:</author>
     <description>
-    Fra: 31-08-2020, kl. 11:00 ―
-    Til: 30-09-2020, kl. 13:00 ―
-     ―
+    Fra 31-08-2020, kl. 11:00
+    til 30-09-2020, kl. 13:00. 
+    
     Sagen er løst og nu lukket ―  Overstået 
     </description>
     <pubDate>Mon, 31 Aug 2020 11:00:00 +0200</pubDate>
-    <category>Bibliotekssystemet</category>
+    <category>Bibliotekssystemet | Løste problemer</category>
   </item>
   <item>
     <title>Test - løst problem</title>
-    <author>Løste problemer</author>
-    <link>https://example.com</link>
+    <author>Opdateret:</author>
     <description>
-    Fra: 09-09-2020, kl. 12:00 ―
-    Til: 11-09-2020, kl. 14:00 ―
-     ―
-     Lorem ipsum dolor sit amet. ― I dette tilfælde er der ikke brugt ret meget af skabelonen ― Tilbagemeldinger kan sendes til: XXX
+    Fra 09-09-2020, kl. 12:00
+    til 11-09-2020, kl. 14:00. 
+    
+     Lorem ipsum dolor sit amet. ― I dette tilfælde er der ikke brugt ret meget af skabelonen ― Tilbagemeldinger kan sendes til: shyn@kb.dk 
     </description>
     <pubDate>Wed, 09 Sep 2020 12:00:00 +0200</pubDate>
-    <category>Netværk</category>
+    <category>Netværk | Løste problemer</category>
   </item>
 </channel>
 
