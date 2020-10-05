@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
 <channel>
-  <title>Driftstatus for Det Kgl. Bibliotek</title>
-  <link>https://www.kb.dk</link>
+  <title>Driftstatus for </title>
+  <link>https://www.example.dk</link>
   <!-- REPLACE!! -->
   <atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml" />
   <description>Beskeder om driftstatus for applikationer og services.</description>
