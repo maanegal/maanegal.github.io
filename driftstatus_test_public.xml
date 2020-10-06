@@ -8,27 +8,39 @@
   <atom:link href="https://example.com/rss.xml" rel="self" type="application/rss+xml" />
   <description>Beskeder om driftstatus for applikationer og services.</description>
   <language>da</language>
-  <lastBuildDate>Mon, 05 Oct 2020 11:45:11 +0200</lastBuildDate>
+  <lastBuildDate>Tue, 06 Oct 2020 09:29:32 +0200</lastBuildDate>
   <ttl>20</ttl>
     <item>
+    <title>Fejl i kalendervisning</title>
+    <author>Opdateret:</author>
+    <description>Fra 04-10-2020 13:00til 08-10-2020 15:00.Næste opfølgning: 06-10-2020 14:00. 
+     Alle systemer er nede, og det er ikke godt.
+    </description>
+    <pubDate>Sun, 04 Oct 2020 13:00:00 +0200</pubDate>
+    <category>Mail, Kalender og webmail | Ude af drift</category>
+  </item>
+  <item>
     <title>Kæmpestore problemer</title>
     <author>Opdateret:</author>
-    <description>
-    Fra 17-09-2020, kl. 11:00
-    til 31-10-2020, kl. 13:00. 
-    Næste opfølgning: 30-09-2020, kl. 12:00. 
+    <description>Fra 17-09-2020 11:00til 31-10-2020 13:00.Næste opfølgning: 30-09-2020 12:00. 
      Det virker overhovedet ikke.
     </description>
     <pubDate>Thu, 17 Sep 2020 11:00:00 +0200</pubDate>
     <category>Netværk | Ude af drift</category>
   </item>
   <item>
+    <title>Store opdateringer</title>
+    <author>Opdateret:</author>
+    <description>Fra 06-10-2020 13:00til 08-10-2020 15:00.
+     Samtlige maskinger omlægges til at køre OS/2. Det bliver godt.
+    </description>
+    <pubDate>Tue, 06 Oct 2020 13:00:00 +0200</pubDate>
+    <category>Publikums-pc’ere | Planlagte ændringer</category>
+  </item>
+  <item>
     <title>test emne</title>
     <author>Opdateret:</author>
-    <description>
-    Fra 31-08-2020, kl. 11:00
-    til 30-09-2020, kl. 13:00. 
-    
+    <description>Fra 31-08-2020 11:00til 30-09-2020 13:00.
     Sagen er løst og nu lukket ―  Overstået 
     </description>
     <pubDate>Mon, 31 Aug 2020 11:00:00 +0200</pubDate>
@@ -37,14 +49,20 @@
   <item>
     <title>Test - løst problem</title>
     <author>Opdateret:</author>
-    <description>
-    Fra 09-09-2020, kl. 12:00
-    til 11-09-2020, kl. 14:00. 
-    
-     Lorem ipsum dolor sit amet. ― I dette tilfælde er der ikke brugt ret meget af skabelonen ― Tilbagemeldinger kan sendes til: shyn@kb.dk 
+    <description>Fra 09-09-2020 12:00til 11-09-2020 14:00.
+     Lorem ipsum dolor sit amet. ― I dette tilfælde er der ikke brugt ret meget af skabelonen ― Tilbagemeldinger kan sendes til: 
     </description>
     <pubDate>Wed, 09 Sep 2020 12:00:00 +0200</pubDate>
     <category>Netværk | Løste problemer</category>
+  </item>
+  <item>
+    <title>Intet nyt er godt nyt</title>
+    <author>Opdateret:</author>
+    <description>
+     Alt kører som det skal. Hav en fortsat god dag.
+    </description>
+    <pubDate></pubDate>
+    <category>Bibliotekssystemet | Generel information</category>
   </item>
 </channel>
 
