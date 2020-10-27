@@ -3,9 +3,8 @@
     <head>
         <title>Driftstatus</title>
         <meta charset="utf-8">
-        
-<style>
-/* Normalization */
+        <style>
+            /* Normalization */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
 
@@ -28,14 +27,16 @@ html {
 }
 
 body {
+  --cat-color: #999;
     font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     font-weight: 400;
     max-width: 1260px;
     margin: 0 auto;
-	padding-right: 1rem;
     background: #fff;
+    padding-right: 20px;
+    padding-left: 3px;
 }
 
 /*
@@ -54,7 +55,7 @@ body {
     font-style: normal;
 }
 
-.ms-Icon, .card-btn:after, .category h2::before, #all_display_btn:before {
+.ms-Icon, .card-btn:after, .category h2::before, .btn:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -99,7 +100,7 @@ header aside {
     font-style: normal;
 }
 
-#all_display_btn {
+.btn {
 	cursor: pointer;
 	user-select: none;
 	transition: all .15s ease-in;
@@ -114,18 +115,36 @@ header aside {
 	padding: 7px 0;
 	font-size: .85rem;
 }
-#all_display_btn:before {
+.btn:hover {
+  box-shadow: inset 0 0 3rem rgba(0,0,0,0.3);
+  background: rgb(17, 100, 102);
+}
+
+.btn:before {
     content: "\E738";
     font-size: 10px;
     margin-right: 9px;
 }
-#all_display_btn.collapsed:before {
+.btn.collapsed:before {
     content: "\E710";
 }
 
-#all_display_btn:hover {
-  box-shadow: inset 0 0 3rem rgba(0,0,0,0.3);
-  background: rgb(17, 100, 102);
+.btn.collapsed .close {
+  display: none;
+}
+.btn:not(.collapsed) .open {
+  display: none;
+}
+
+.btn.expired-expander {
+    width: 175px;
+    margin: 30px auto 0;
+}
+.btn.expired-expander.collapsed {
+    opacity: .75;
+}
+.btn.expired-expander:hover {
+    opacity: 1;
 }
 
 .outer-container {
@@ -135,8 +154,9 @@ header aside {
 }
 .category {
 	flex-basis: 100%;
-	margin: 1rem 0;
+	margin: 6px 0 6px;
     position: relative;
+    --cat-color: hsl(0, 0%, 32%);
 }
 @media (min-width: 568px) {
   .category {
@@ -155,7 +175,7 @@ header aside {
   font-weight: 600;
   text-align: left;
   font-size: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 .category h2::before {
     content: "";
@@ -182,7 +202,7 @@ header aside {
 	content: "";
 	width: 100%;
 	height: 4px;
-	background: hsl(0, 0%, 32%);
+    background: var(--cat-color);
 	position: absolute;
 	top: 30px;
 	left: 0;
@@ -192,17 +212,17 @@ header aside {
 .category:hover::before {
     opacity: 1;
 }
-.category.problems::before {
-	background: #661111;
+.category.problems {
+	--cat-color: #952828;
 }
-.category.planned::before {
-    background: #2f7f80;
+.category.planned {
+    --cat-color: #2f7f80;
 }
-.category.solved::before {
-    background: #116612;
+.category.solved {
+    --cat-color: #1f8a20;
 }
-.category.info::before {
-    background: #121166;
+.category.info {
+    --cat-color: #121166;
 }
 
 .category .category-counter {
@@ -212,15 +232,13 @@ header aside {
 	display: inline-block;
 	font-weight: 700;
 	text-align: center;
-	line-height: 26px;
-	width: 26px;
+	line-height: 21px;
+	width: 21px;
     font-size: 14px;
     margin-left: 7px;
 }
 
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
   border-radius: 5px;
   padding: 0;
 }
@@ -237,7 +255,6 @@ header aside {
 
 .card {
   margin: .5rem 0;
-  flex-basis: 100%;
   height: max-content;
   border: 1px solid rgb(237, 235, 233);
     border-radius: 2px;
@@ -255,7 +272,7 @@ header aside {
   position: relative;
   cursor: pointer;
   padding: 4px 10px 8px 10px;
-  transition: background .2s ease;
+  transition: background .25s ease;
 }
 .card-head:hover {
 	background: #faf9f8;
@@ -263,6 +280,7 @@ header aside {
 
 .card-body {
 	border-top: 2px solid rgb(237, 235, 233);
+    padding: 4px 10px 10px;
 }
 
 .card-service {
@@ -275,14 +293,16 @@ header aside {
     line-height: 12px;
     font-weight: bold;
     padding: 7px 0;
+    color: #222;
 }
 
 .card-subject {
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 300;
 }
 .card.collapsed .card-subject {
-  max-height: 2.5rem;
+  max-height: 50px;
+  padding-bottom: 2px;
   overflow: hidden;
 }
 
@@ -291,18 +311,23 @@ header aside {
 }
 
 .card-time-list {
-    padding: 9px 10px 0px 10px;
+    /* padding: 0 10px; */
   display: flex;
-
+    flex-wrap: wrap;
 }
 
 .card-time-list-col:first-child {
     display: flex;
     justify-content: space-between;
-    flex: 2;
+    /*flex: 2;*/
 }
 .card-time-list-col:last-child {
-    flex: 1;
+    /* flex: 1; */
+    padding-bottom: 6px;
+}
+
+br {
+	margin-bottom: 6px;
 }
 
 .card-time, .card-time-stacked {
@@ -318,21 +343,21 @@ header aside {
   font-size: 12px;
   text-overflow: ellipsis;
 overflow: hidden;
-color: #515151;
+color: #333;
 margin-top: 5px;
 font-weight: bold;
 }
 
 .card-time-stamp {
   font-size: 12px;
-  color: #515151;
+  color: #333;
   text-overflow: ellipsis;
 overflow: hidden;
 font-weight: 600;
 }
 
 .card-message {
-	margin-bottom: 9px;
+	/* margin-bottom: 12px; */
 	/*font-size: 14px;*/
     font-size: 13px;
 	line-clamp: 10;
@@ -340,8 +365,9 @@ font-weight: 600;
 	text-overflow: ellipsis;
 	/*font-weight: lighter;*/
     font-weight: 400;
-	line-height: 17px;
-	padding: 9px 10px 0px 10px;
+	line-height: 1.4;
+    color: #111;
+	/* padding: 0 10px; */
 }
 
 .card-btn {
@@ -368,193 +394,456 @@ font-weight: 600;
   opacity: 1;
 }
 
-</style>
 
-    </head>
+
+.card-body.thread {
+  padding-left: 24px;
+  position: relative;
+  opacity: .75;
+  transition: opacity .25s ease;
+}
+.card-body.thread:not(:nth-child(2)) {
+  border: 0;
+}
+.card-body.thread::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  background: var(--cat-color);
+  height: calc(100% - 18px);
+  width: 2px;
+  opacity: .6;
+  transition: width .25s ease;
+}
+.card-body.thread:hover::before {
+  width: 3px;
+}
+
+.card-body.thread:not(.reversed):last-child,
+.card-body.thread:not(.reversed)::before,
+.card-body.thread:hover {
+  opacity: 1;
+}
+
+.card-body.thread.reversed:nth-child(2),
+.card-body.thread.reversed:nth-child(2)::before {
+  opacity: 1;
+}
+
+.expired .card {
+  opacity: .75;
+}
+.expired .card:hover {
+  opacity: 1;
+}
+.expired {
+  padding: 5px 0 5px 15px;
+  border-left: 3px solid #ccc;
+  margin-top: 5px;
+}
+.expired.collapsed {
+    display: none;
+}
+.expired h3 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 18px;
+  padding: 5px 0;
+}
+.expired h3 span::after {
+  content: "\E974";
+  transition: transform 0.1s linear 0s;
+  transform: rotate(90deg);
+  font-size: 14px;
+  padding-left: 7px;
+}
+
+
+.spotlight {
+	margin: 25px auto;
+	max-width: 600px;
+	border: 2px solid #ccc;
+	box-shadow: 0 5px 20px -5px rgba(0,0,0,0.25);
+}
+.spotlight.closed {
+	display: none;
+}
+.spotlight .card-btn::after {
+	content: "\E710";
+	transform: rotate(45deg);
+}
+        </style>
+        </head>
     <body>
         <header>
-            <aside>Sidst opdateret: 05-10-2020, kl. 11:34</aside>
-            <h1>Driftstatus</h1>
-            <div id="all_display_btn" class="" data-open="Åbn alle beskeder" data-close="Luk alle beskeder">Åbn/luk alle beskeder</div>
+            <aside>Sidst opdateret: 27-10-2020 14:38. Der vises beskeder for de seneste 45 dage.</aside>
+            <div id="all_display_btn" class="btn"><span class="open">Åbn alle beskeder</span><span class="close">Luk alle beskeder</span></div>
         </header>
-
         <div class="outer-container">        
             <div class="category problems">
-                <h2>Ude af drift<span class="category-counter">1</span></h2>
-                
+                <h2>Ude af drift<span class="category-counter">2</span></h2>
                 <div class="card-container">
-                                        <article class="card red  grid">
-                      <div class="card-head">
-                        <div class="card-head-col">
-                          <div class="card-service">Netværk</div>
-                          <div class="card-subject">Kæmpestore problemer</div>
-                        </div>
-                        <div class="card-head-col">
-                          <div class="card-status">Igangværende</div>
-                        </div>
-                        <div class="card-btn" title="Vis/skjul detaljer"></div>
-                      </div>
-                      <div class="card-body">
-                        <div class="card-time-list">
-                          <div class="card-time-list-col">
-                            
-                              <div class="card-time">
-                                <span class="card-time-label">Fra:</span>
-                                <span class="card-time-stamp">17-09-2020, kl. 11:00</span>
-                              </div>
-                            
-                            
-                              <div class="card-time">
-                                <span class="card-time-label">Til:</span>
-                                <span class="card-time-stamp">31-10-2020, kl. 13:00</span>
-                              </div>
-                            
-                          </div>
-                          
-                          <div class="card-time-list-col">
-                            <div class="card-time-stacked">
-                              <span class="card-time-label">Næste opfølgning:</span>
-                              <span class="card-time-stamp">30-09-2020, kl. 12:00</span>
+                    <article class="card thread-3G76">
+                          <div class="card-head">
+                            <div class="card-head-col">
+                              <div class="card-service">Netværk</div>
+                              <div class="card-subject">Kæmpestore problemer</div>
                             </div>
+                            <div class="card-btn" title="Vis/skjul detaljer"></div>
                           </div>
-                          
+                          <div class="card-body thread reversed" title="Besked 2 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">17-09-2020 11:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Forventes løst:</span>
+                                  <span class="card-time-stamp">01-11-2020 13:00</span>
+                                </div>
+                                </div>
+                              <div class="card-time-list-col">
+                                <div class="card-time-stacked">
+                                  <span class="card-time-label">Næste opfølgning:</span>
+                                  <span class="card-time-stamp">15-10-2020 12:00</span>
+                                </div>
+                              </div>
+                              </div>
+                            <div class="card-message"><br>Mere bøvl<br></div>
+                          </div>
+                          <div class="card-body thread reversed" title="Besked 1 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">17-09-2020 11:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Forventes løst:</span>
+                                  <span class="card-time-stamp">31-10-2020 13:00</span>
+                                </div>
+                                </div>
+                              <div class="card-time-list-col">
+                                <div class="card-time-stacked">
+                                  <span class="card-time-label">Næste opfølgning:</span>
+                                  <span class="card-time-stamp">30-09-2020 12:00</span>
+                                </div>
+                              </div>
+                              </div>
+                            <div class="card-message"><br>Det virker overhovedet ikke.</div>
+                          </div>
+                          </article>
+                        <div class="btn expired-expander collapsed" data-target="expired-problems" title="Vis/skjul beskeder, hvis seneste tidsanmærkning er i fortiden."><span class="open">Vis ældre beskeder</span><span class="close">Skjul ældre beskeder</span></div>
+                        <div class="expired collapsed" id="expired-problems">
+                        <article class="card thread-DGT2">
+                          <div class="card-head">
+                            <div class="card-head-col">
+                              <div class="card-service">Mail, Kalender og webmail</div>
+                              <div class="card-subject">Test message</div>
+                            </div>
+                            <div class="card-btn" title="Vis/skjul detaljer"></div>
+                          </div>
+                          <div class="card-body ">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">08-10-2020 09:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Forventes løst:</span>
+                                  <span class="card-time-stamp">08-10-2020 11:00</span>
+                                </div>
+                                </div>
+                              <div class="card-time-list-col">
+                                <div class="card-time-stacked">
+                                  <span class="card-time-label">Næste opfølgning:</span>
+                                  <span class="card-time-stamp">08-10-2020 10:00</span>
+                                </div>
+                              </div>
+                              </div>
+                            <div class="card-message"><br>Berørte systemer:      	[ f.eks. FileSender, iPass etc. - hvis de kendes ]<br>Berørte institutioner: 	[ f.eks. AU, AAU, Alle etc. - hvis de kendes ]<br>Besked: <br>[ Kort, giv yderligere info.  Specielt, hvordan sagen påvirker brugerne. ]  <br>Tilbagemeldinger kan sendes til: [  xxxxx@xxx.dk  ]<br>Med venlig hilsen,<br>XX<br><br>(Du modtager denne besked, idet du abonnerer på ServiceInfo. Du kan af- og tilmelde dig beskeder på https://www.serviceinfo.dk)<br></div>
+                          </div>
+                          </article>
                         </div>
-                        <div class="card-message">
-                          <br>Det virker overhovedet ikke.
                         </div>
-                      </div>
-                    </article>
-                </div>
-                
             </div>
             <div class="category planned">
                 <h2>Planlagte ændringer<span class="category-counter">0</span></h2>
-                
+                <div class="card-container">
+                    </div>
             </div>
             <div class="category solved">
-                <h2>Løste problemer<span class="category-counter">2</span></h2>
-                
+                <h2>Løste problemer<span class="category-counter">5</span></h2>
                 <div class="card-container">
-                                        <article class="card green  grid">
-                      <div class="card-head">
-                        <div class="card-head-col">
-                          <div class="card-service">Bibliotekssystemet</div>
-                          <div class="card-subject">test emne</div>
-                        </div>
-                        <div class="card-head-col">
-                          <div class="card-status">Afsluttet</div>
-                        </div>
-                        <div class="card-btn" title="Vis/skjul detaljer"></div>
-                      </div>
-                      <div class="card-body">
-                        <div class="card-time-list">
-                          <div class="card-time-list-col">
-                            
-                              <div class="card-time">
-                                <span class="card-time-label">Fra:</span>
-                                <span class="card-time-stamp">31-08-2020, kl. 11:00</span>
-                              </div>
-                            
-                            
-                              <div class="card-time">
-                                <span class="card-time-label">Til:</span>
-                                <span class="card-time-stamp">30-09-2020, kl. 13:00</span>
-                              </div>
-                            
+                    <div class="btn expired-expander collapsed" data-target="expired-solved" title="Vis/skjul beskeder, hvis seneste tidsanmærkning er i fortiden."><span class="open">Vis ældre beskeder</span><span class="close">Skjul ældre beskeder</span></div>
+                        <div class="expired collapsed" id="expired-solved">
+                        <article class="card thread-TB8Q">
+                          <div class="card-head">
+                            <div class="card-head-col">
+                              <div class="card-service">Bibliotekssystemet</div>
+                              <div class="card-subject">test emne</div>
+                            </div>
+                            <div class="card-btn" title="Vis/skjul detaljer"></div>
                           </div>
-                          
-                        </div>
-                        <div class="card-message">
-                          Sagen er løst og nu lukket<br><br><br>Overstået<br>
-                        </div>
-                      </div>
-                    </article>
-                    <article class="card green  grid">
-                      <div class="card-head">
-                        <div class="card-head-col">
-                          <div class="card-service">Netværk</div>
-                          <div class="card-subject">Test - løst problem</div>
-                        </div>
-                        <div class="card-head-col">
-                          <div class="card-status">Afsluttet</div>
-                        </div>
-                        <div class="card-btn" title="Vis/skjul detaljer"></div>
-                      </div>
-                      <div class="card-body">
-                        <div class="card-time-list">
-                          <div class="card-time-list-col">
-                            
-                              <div class="card-time">
-                                <span class="card-time-label">Fra:</span>
-                                <span class="card-time-stamp">09-09-2020, kl. 12:00</span>
+                          <div class="card-body ">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">31-08-2020 11:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Afsluttet:</span>
+                                  <span class="card-time-stamp">30-09-2020 13:00</span>
+                                </div>
+                                </div>
                               </div>
-                            
-                            
-                              <div class="card-time">
-                                <span class="card-time-label">Til:</span>
-                                <span class="card-time-stamp">11-09-2020, kl. 14:00</span>
-                              </div>
-                            
+                            <div class="card-message">Sagen er løst og nu lukket<br><br>Overstået<br></div>
                           </div>
-                          
+                          </article>
+                        <article class="card thread-Y3BK">
+                          <div class="card-head">
+                            <div class="card-head-col">
+                              <div class="card-service">Netværk</div>
+                              <div class="card-subject">Test - løst problem</div>
+                            </div>
+                            <div class="card-btn" title="Vis/skjul detaljer"></div>
+                          </div>
+                          <div class="card-body ">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">09-09-2020 12:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Afsluttet:</span>
+                                  <span class="card-time-stamp">11-09-2020 14:00</span>
+                                </div>
+                                </div>
+                              </div>
+                            <div class="card-message"><br>Lorem ipsum dolor sit amet.<br>I dette tilfælde er der ikke brugt ret meget af skabelonen<br>Tilbagemeldinger kan sendes til: shyn@kb.dk<br></div>
+                          </div>
+                          </article>
+                        <article class="card thread-LAC8">
+                          <div class="card-head">
+                            <div class="card-head-col">
+                              <div class="card-service">Mail, Kalender og webmail</div>
+                              <div class="card-subject">Fejl i kalendervisning</div>
+                            </div>
+                            <div class="card-btn" title="Vis/skjul detaljer"></div>
+                          </div>
+                          <div class="card-body thread reversed" title="Besked 2 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">04-10-2020 13:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Afsluttet:</span>
+                                  <span class="card-time-stamp">08-10-2020 15:00</span>
+                                </div>
+                                </div>
+                              </div>
+                            <div class="card-message">Sagen er løst og nu lukket<br><br>Så fik vi ordnet dét!<br></div>
+                          </div>
+                          <div class="card-body thread reversed" title="Besked 1 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">04-10-2020 13:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Afsluttet:</span>
+                                  <span class="card-time-stamp">08-10-2020 15:00</span>
+                                </div>
+                                </div>
+                              <div class="card-time-list-col">
+                                <div class="card-time-stacked">
+                                  <span class="card-time-label">Næste opfølgning:</span>
+                                  <span class="card-time-stamp">06-10-2020 14:00</span>
+                                </div>
+                              </div>
+                              </div>
+                            <div class="card-message"><br>Alle systemer er nede, og det er ikke godt.</div>
+                          </div>
+                          </article>
+                        <article class="card thread-BY3Q">
+                          <div class="card-head">
+                            <div class="card-head-col">
+                              <div class="card-service">Publikums-pc’ere</div>
+                              <div class="card-subject">Store opdateringer</div>
+                            </div>
+                            <div class="card-btn" title="Vis/skjul detaljer"></div>
+                          </div>
+                          <div class="card-body thread reversed" title="Besked 2 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">06-10-2020 13:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Afsluttet:</span>
+                                  <span class="card-time-stamp">08-10-2020 15:00</span>
+                                </div>
+                                </div>
+                              </div>
+                            <div class="card-message">Sagen er løst og nu lukket<br><br>Omlægningen er nu fundet sted.<br></div>
+                          </div>
+                          <div class="card-body thread reversed" title="Besked 1 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">06-10-2020 13:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Afsluttet:</span>
+                                  <span class="card-time-stamp">08-10-2020 15:00</span>
+                                </div>
+                                </div>
+                              </div>
+                            <div class="card-message"><br>Samtlige maskinger omlægges til at køre OS/2. Det bliver godt.</div>
+                          </div>
+                          </article>
+                        <article class="card thread-M9RT">
+                          <div class="card-head">
+                            <div class="card-head-col">
+                              <div class="card-service">Publikums-pc’ere</div>
+                              <div class="card-subject">Vi afskaffer computere</div>
+                            </div>
+                            <div class="card-btn" title="Vis/skjul detaljer"></div>
+                          </div>
+                          <div class="card-body thread reversed" title="Besked 2 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">14-10-2020 09:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Afsluttet:</span>
+                                  <span class="card-time-stamp">14-10-2020 11:00</span>
+                                </div>
+                                </div>
+                              </div>
+                            <div class="card-message">Sagen er løst og nu lukket<br><br>Vi gjorde det!<br></div>
+                          </div>
+                          <div class="card-body thread reversed" title="Besked 1 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                <div class="card-time">
+                                  <span class="card-time-label">Startede/blev opdaget:</span>
+                                  <span class="card-time-stamp">14-10-2020 09:00</span>
+                                </div>
+                                <div class="card-time">
+                                  <span class="card-time-label">Afsluttet:</span>
+                                  <span class="card-time-stamp">14-10-2020 11:00</span>
+                                </div>
+                                </div>
+                              <div class="card-time-list-col">
+                                <div class="card-time-stacked">
+                                  <span class="card-time-label">Næste opfølgning:</span>
+                                  <span class="card-time-stamp">09-10-2020 10:00</span>
+                                </div>
+                              </div>
+                              </div>
+                            <div class="card-message"><br>Ud med det nye, ind med det gamle! Lommeregnere til alle! Huzzah!</div>
+                          </div>
+                          </article>
                         </div>
-                        <div class="card-message">
-                          <br>Lorem ipsum dolor sit amet.<br><br>I dette tilfælde er der ikke brugt ret meget af skabelonen<br><br>Tilbagemeldinger kan sendes til: XXX<br>
                         </div>
-                      </div>
-                    </article>
-                </div>
-                
             </div>
             <div class="category info">
-                <h2>Generel information<span class="category-counter">0</span></h2>
-                
+                <h2>Generel information<span class="category-counter">1</span></h2>
+                <div class="card-container">
+                    <article class="card thread-6UDN">
+                          <div class="card-head">
+                            <div class="card-head-col">
+                              <div class="card-service">Bibliotekssystemet</div>
+                              <div class="card-subject">Intet nyt er godt nyt</div>
+                            </div>
+                            <div class="card-btn" title="Vis/skjul detaljer"></div>
+                          </div>
+                          <div class="card-body thread reversed" title="Besked 2 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                </div>
+                              </div>
+                            <div class="card-message">Intet nyt under solen, eller fra vestfronten<br></div>
+                          </div>
+                          <div class="card-body thread reversed" title="Besked 1 af 2">
+                            <div class="card-time-list">
+                              <div class="card-time-list-col">
+                                </div>
+                              </div>
+                            <div class="card-message"><br>Alt kører som det skal. Hav en fortsat god dag.</div>
+                          </div>
+                          </article>
+                        </div>
             </div>
-        </div>
+            </div>
          
-    <script>
-        document.querySelectorAll('.card-head').forEach(function(button) {
-            button.addEventListener('click', function() {
-              button.parentElement.classList.toggle('collapsed');
-            }); 
-        });
-        const all_display_btn = document.querySelector('#all_display_btn');
-        if (all_display_btn.classList.contains('collapsed')) {
-            all_display_btn.innerHTML = all_display_btn.dataset.open;
-        } else {
-            all_display_btn.innerHTML = all_display_btn.dataset.close;
-        }
-        all_display_btn.addEventListener('click', function() {
-            if (all_display_btn.classList.contains('collapsed')) {
-                all_display_btn.classList.remove('collapsed');
-                all_display_btn.innerHTML = all_display_btn.dataset.close;
-                document.querySelectorAll('.card').forEach(function(button) {
-                    button.classList.remove('collapsed');
+        <script>
+            document.querySelectorAll('.card-head').forEach(function(button) {
+                button.addEventListener('click', function() {
+                  button.parentElement.classList.toggle('collapsed');
                 }); 
-            } else {
-                all_display_btn.classList.add('collapsed');
-                all_display_btn.innerHTML = all_display_btn.dataset.open;
-                document.querySelectorAll('.card').forEach(function(button) {
-                    button.classList.add('collapsed');
-                }); 
+            });
+            const all_display_btn = document.querySelector('#all_display_btn');
+            all_display_btn.addEventListener('click', function() {
+                if (all_display_btn.classList.contains('collapsed')) {
+                    all_display_btn.classList.remove('collapsed');
+                    document.querySelectorAll('.card').forEach(function(button) {
+                        button.classList.remove('collapsed');
+                    }); 
+                } else {
+                    all_display_btn.classList.add('collapsed');
+                    document.querySelectorAll('.card').forEach(function(button) {
+                        button.classList.add('collapsed');
+                    }); 
+                }
+            });
+            document.querySelectorAll('.expired-expander').forEach(function(expired_btn) {
+                var expired = '#' + expired_btn.dataset.target;
+                expired_btn.addEventListener('click', function() {
+                    if (expired_btn.classList.contains('collapsed')) {
+                        expired_btn.classList.remove('collapsed');
+                        document.querySelector(expired).classList.remove('collapsed');
+                    } else {
+                        expired_btn.classList.add('collapsed');
+                        document.querySelector(expired).classList.add('collapsed');
+                    }
+                });
+            });
+
+
+            function getParentUrl() {
+                var isInIframe = (parent !== window),
+                    parentUrl = location.href;
+                if (isInIframe) {
+                    parentUrl = document.referrer;
+                }
+                return parentUrl;
             }
-        });
 
-function getParentUrl() {
-    var isInIframe = (parent !== window),
-        parentUrl = null;
-
-    if (isInIframe) {
-        parentUrl = document.referrer;
-    }
-
-    return parentUrl;
-}
-	    
-	    console.log(getParentUrl());
-	    console.log(document.location.href, window.parent.location, location.ancestorOrigins);
-	    document.querySelector('aside').innerHTML = getParentUrl();
-	    
-	    </script>
+            const spot_thread = /driftsbesked=(?<msg>.+?)(&|$)/g.exec(getParentUrl()).groups.msg;
+            if (spot_thread) {
+              let spot_elem = document.querySelector('.thread-'+spot_thread).cloneNode(true);
+              spot_elem.classList.add('spotlight');
+              spot_elem.querySelector('.card-btn').setAttribute('title', 'Luk besked');
+              spot_elem.querySelector('.card-btn').addEventListener('click', function() {
+                  spot_elem.classList.toggle('closed');
+              }); 
+              const header_elem = document.querySelector('header');
+              header_elem.parentNode.insertBefore(spot_elem, header_elem.nextSibling);
+            }
+        </script>
     </body>
 </html>
