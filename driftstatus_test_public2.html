@@ -539,6 +539,21 @@ font-weight: 600;
                 }); 
             }
         });
-    </script>
+
+function getParentUrl() {
+    var isInIframe = (parent !== window),
+        parentUrl = null;
+
+    if (isInIframe) {
+        parentUrl = document.referrer;
+    }
+
+    return parentUrl;
+}
+	    
+	    console.log(getParentUrl());
+	    document.querySelector('aside').innerHTML = getParentUrl();
+	    
+	    </script>
     </body>
 </html>
