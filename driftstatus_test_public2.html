@@ -552,7 +552,8 @@ function getParentUrl() {
 }
 	    
 	    console.log(getParentUrl());
-	    document.querySelector('aside').innerHTML = getParentUrl() + document.location.href + window.parent.location + location.ancestorOrigins;
+	    console.log(document.location.href, window.parent.location, location.ancestorOrigins);
+	    document.querySelector('aside').innerHTML = getParentUrl();
 	    
 	    </script>
     </body>
