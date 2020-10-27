@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
 
 <channel>
   <title>Driftstatus</title>
   <link>https://www.example.dk</link>
-  <atom:link href="https://example.com/rss.xml" rel="self" type="application/rss+xml" />
   <description>Beskeder om driftstatus for applikationer og services.</description>
   <language>da</language>
   <lastBuildDate>Tue, 27 Oct 2020 14:51:33 +0100</lastBuildDate>
   <ttl>20</ttl>
   <item>
     <title>Fejl i kalendervisning</title>
-        <author>Løste problemer</author>
+        <author>Lste problemer</author>
         <description>
         Startede/blev opdaget:
             04-10-2020 13:00Afsluttet:
