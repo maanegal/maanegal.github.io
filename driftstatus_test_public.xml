@@ -1,168 +1,218 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
 <channel>
   <title>Driftstatus</title>
   <link>https://www.example.dk</link>
+  <atom:link href="https://example.com/rss.xml" rel="self" type="application/rss+xml" />
   <description>Beskeder om driftstatus for applikationer og services.</description>
   <language>da</language>
-  <lastBuildDate>Tue, 27 Oct 2020 14:51:33 +0100</lastBuildDate>
+  <lastBuildDate>Thu, 29 Oct 2020 15:54:21 +0100</lastBuildDate>
   <ttl>20</ttl>
   <item>
     <title>Fejl i kalendervisning</title>
-        <author>Lste problemer</author>
+        <author>Løste problemer</author>
         <description>
-        Startede/blev opdaget:
-            04-10-2020 13:00Afsluttet:
-            08-10-2020 15:00Næste opfølgning:
-            06-10-2020 14:00Alle systemer er nede, og det er ikke godt.</description>
+        
+        MAIL, KALENDER OG WEBMAIL | 
+        Alle systemer er nede, og det er ikke godt.| 
+        Beskedkode: LAC8
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Mail, Kalender og webmail</category>
+        Thu, 08 Oct 2020 15:00:00 +0200</pubDate>
+        <category>
+        Løst:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=LAC8</link>
     </item>
   <item>
     <title>Test message</title>
         <author>Ude af drift</author>
         <description>
-        Startede/blev opdaget:
-            08-10-2020 09:00Forventes løst:
-            08-10-2020 11:00Næste opfølgning:
-            08-10-2020 10:00Berørte systemer:      	[ f.eks. FileSender, iPass etc. - hvis de kendes ]Berørte institutioner: 	[ f.eks. AU, AAU, Alle etc. - hvis de kendes ]Besked: [ Kort, giv yderligere info.  Specielt, hvordan sagen påvirker brugerne. ]  Tilbagemeldinger kan sendes til: [  xxxxx@xxx.dk  ]Med venlig hilsen,XX(Du modtager denne besked, idet du abonnerer på ServiceInfo. Du kan af- og tilmelde dig beskeder på https://www.serviceinfo.dk)</description>
+        
+        MAIL, KALENDER OG WEBMAIL | 
+        Berørte systemer:      	[ f.eks. FileSender, iPass etc. - hvis de...| 
+        Beskedkode: DGT2
+        </description>
         <pubDate>
         Thu, 08 Oct 2020 09:00:00 +0200</pubDate>
-        <category>Mail, Kalender og webmail</category>
+        <category>
+        Begyndte:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=DGT2</link>
     </item>
   <item>
     <title>Fejl i kalendervisning</title>
         <author>Løste problemer</author>
         <description>
-        Startede/blev opdaget:
-            04-10-2020 13:00Afsluttet:
-            08-10-2020 15:00Sagen er løst og nu lukketSå fik vi ordnet dét!</description>
+        
+        MAIL, KALENDER OG WEBMAIL | 
+        Sagen er løst og nu lukketSå fik vi ordnet dét!| 
+        Beskedkode: LAC8
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Mail, Kalender og webmail</category>
+        Thu, 08 Oct 2020 15:00:00 +0200</pubDate>
+        <category>
+        Løst:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=LAC8</link>
     </item>
   <item>
     <title>Kæmpestore problemer</title>
         <author>Ude af drift</author>
         <description>
-        Startede/blev opdaget:
-            17-09-2020 11:00Forventes løst:
-            31-10-2020 13:00Næste opfølgning:
-            30-09-2020 12:00Det virker overhovedet ikke.</description>
+        
+        NETVÆRK | 
+        Det virker overhovedet ikke.| 
+        Beskedkode: 3G76
+        </description>
         <pubDate>
         Thu, 17 Sep 2020 11:00:00 +0200</pubDate>
-        <category>Netværk</category>
+        <category>
+        Begyndte:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=3G76</link>
     </item>
   <item>
     <title>Kæmpestore problemer</title>
         <author>Ude af drift</author>
         <description>
-        Startede/blev opdaget:
-            17-09-2020 11:00Forventes løst:
-            01-11-2020 13:00Næste opfølgning:
-            15-10-2020 12:00Mere bøvl</description>
+        
+        NETVÆRK | 
+        Mere bøvl| 
+        Beskedkode: 3G76
+        </description>
         <pubDate>
         Thu, 17 Sep 2020 11:00:00 +0200</pubDate>
-        <category>Netværk</category>
+        <category>
+        Begyndte:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=3G76</link>
     </item>
   <item>
     <title>Store opdateringer</title>
         <author>Løste problemer</author>
         <description>
-        Startede/blev opdaget:
-            06-10-2020 13:00Afsluttet:
-            08-10-2020 15:00Samtlige maskinger omlægges til at køre OS/2. Det bliver godt.</description>
+        
+        PUBLIKUMS-PC’ERE | 
+        Samtlige maskinger omlægges til at køre OS/2. Det bliver godt.| 
+        Beskedkode: BY3Q
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Publikums-pc’ere</category>
+        Thu, 08 Oct 2020 15:00:00 +0200</pubDate>
+        <category>
+        Løst:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=BY3Q</link>
     </item>
   <item>
     <title>Store opdateringer</title>
         <author>Løste problemer</author>
         <description>
-        Startede/blev opdaget:
-            06-10-2020 13:00Afsluttet:
-            08-10-2020 15:00Sagen er løst og nu lukketOmlægningen er nu fundet sted.</description>
+        
+        PUBLIKUMS-PC’ERE | 
+        Sagen er løst og nu lukketOmlægningen er nu fundet sted.| 
+        Beskedkode: BY3Q
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Publikums-pc’ere</category>
+        Thu, 08 Oct 2020 15:00:00 +0200</pubDate>
+        <category>
+        Løst:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=BY3Q</link>
     </item>
   <item>
     <title>Vi afskaffer computere</title>
         <author>Løste problemer</author>
         <description>
-        Startede/blev opdaget:
-            14-10-2020 09:00Afsluttet:
-            14-10-2020 11:00Næste opfølgning:
-            09-10-2020 10:00Ud med det nye, ind med det gamle! Lommeregnere til alle! Huzzah!</description>
+        
+        PUBLIKUMS-PC’ERE | 
+        Ud med det nye, ind med det gamle! Lommeregnere til alle! Huzzah!| 
+        Beskedkode: M9RT
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Publikums-pc’ere</category>
+        Wed, 14 Oct 2020 11:00:00 +0200</pubDate>
+        <category>
+        Løst:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=M9RT</link>
     </item>
   <item>
     <title>Vi afskaffer computere</title>
         <author>Løste problemer</author>
         <description>
-        Startede/blev opdaget:
-            14-10-2020 09:00Afsluttet:
-            14-10-2020 11:00Sagen er løst og nu lukketVi gjorde det!</description>
+        
+        PUBLIKUMS-PC’ERE | 
+        Sagen er løst og nu lukketVi gjorde det!| 
+        Beskedkode: M9RT
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Publikums-pc’ere</category>
+        Wed, 14 Oct 2020 11:00:00 +0200</pubDate>
+        <category>
+        Løst:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=M9RT</link>
     </item>
   <item>
     <title>Intet nyt er godt nyt</title>
         <author>Generel information</author>
         <description>
-        Alt kører som det skal. Hav en fortsat god dag.</description>
+        
+        BIBLIOTEKSSYSTEMET | 
+        Alt kører som det skal. Hav en fortsat god dag.| 
+        Beskedkode: 6UDN
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Bibliotekssystemet</category>
+        Thu, 29 Oct 2020 15:54:21 +0100</pubDate>
+        <category>
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=6UDN</link>
     </item>
   <item>
     <title>Intet nyt er godt nyt</title>
         <author>Generel information</author>
         <description>
-        Intet nyt under solen, eller fra vestfronten</description>
+        
+        BIBLIOTEKSSYSTEMET | 
+        Intet nyt under solen, eller fra vestfronten| 
+        Beskedkode: 6UDN
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Bibliotekssystemet</category>
+        Thu, 29 Oct 2020 15:54:21 +0100</pubDate>
+        <category>
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=6UDN</link>
     </item>
   <item>
     <title>test emne</title>
         <author>Løste problemer</author>
         <description>
-        Startede/blev opdaget:
-            31-08-2020 11:00Afsluttet:
-            30-09-2020 13:00Sagen er løst og nu lukketOverstået</description>
+        
+        BIBLIOTEKSSYSTEMET | 
+        Sagen er løst og nu lukketOverstået| 
+        Beskedkode: TB8Q
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Bibliotekssystemet</category>
+        Wed, 30 Sep 2020 13:00:00 +0200</pubDate>
+        <category>
+        Løst:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=TB8Q</link>
     </item>
   <item>
     <title>Test - løst problem</title>
         <author>Løste problemer</author>
         <description>
-        Startede/blev opdaget:
-            09-09-2020 12:00Afsluttet:
-            11-09-2020 14:00Lorem ipsum dolor sit amet.I dette tilfælde er der ikke brugt ret meget af skabelonenTilbagemeldinger kan sendes til: </description>
+        
+        NETVÆRK | 
+        Lorem ipsum dolor sit amet.I dette tilfælde er der ikke brugt ret...| 
+        Beskedkode: Y3BK
+        </description>
         <pubDate>
-        Tue, 27 Oct 2020 14:51:33 +0100</pubDate>
-        <category>Netværk</category>
+        Fri, 11 Sep 2020 14:00:00 +0200</pubDate>
+        <category>
+        Løst:
+        </category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=Y3BK</link>
     </item>
   </channel>
