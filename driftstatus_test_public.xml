@@ -7,8 +7,40 @@
   <atom:link href="https://example.com/rss.xml" rel="self" type="application/rss+xml" />
   <description>Beskeder om driftstatus for applikationer og services.</description>
   <language>da</language>
-  <lastBuildDate>Thu, 29 Oct 2020 15:59:24 +0100</lastBuildDate>
+  <lastBuildDate>Thu, 05 Nov 2020 12:00:18 +0100</lastBuildDate>
   <ttl>20</ttl>
+  <item>
+    <title>Alle bøger mangler</title>
+        <author>
+        Begyndte:
+        </author>
+        <description>
+        
+        UDE AF DRIFT | 
+        Samtlige bøger er i øjeblikket forsvundet fra Alma. Vi arbejder på...| 
+        Beskedkode: 4CHM
+        </description>
+        <pubDate>
+        Wed, 07 Oct 2020 11:00:00 +0200</pubDate>
+        <category>Bibliotekssystemet</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=4CHM</link>
+    </item>
+  <item>
+    <title>Alle bøger mangler</title>
+        <author>
+        Begyndte:
+        </author>
+        <description>
+        
+        UDE AF DRIFT | 
+        Vi fandt bøgerne! De var hos Viggo.| 
+        Beskedkode: 4CHM
+        </description>
+        <pubDate>
+        Wed, 07 Oct 2020 11:00:00 +0200</pubDate>
+        <category>Bibliotekssystemet</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=4CHM</link>
+    </item>
   <item>
     <title>Fejl i kalendervisning</title>
         <author>
@@ -49,7 +81,7 @@
         <description>
         
         LØSTE PROBLEMER | 
-        Sagen er løst og nu lukketSå fik vi ordnet dét!| 
+        Sagen er løst og nu lukket Så fik vi ordnet dét!| 
         Beskedkode: LAC8
         </description>
         <pubDate>
@@ -58,36 +90,68 @@
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=LAC8</link>
     </item>
   <item>
-    <title>Kæmpestore problemer</title>
+    <title>Webmail loader ikke</title>
         <author>
         Begyndte:
         </author>
         <description>
         
         UDE AF DRIFT | 
-        Det virker overhovedet ikke.| 
-        Beskedkode: 3G76
+        Vi er klar over problemet, og arbejder på at løse det...| 
+        Beskedkode: 2C3V
         </description>
         <pubDate>
-        Thu, 17 Sep 2020 11:00:00 +0200</pubDate>
-        <category>Netværk</category>
-        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=3G76</link>
+        Sun, 01 Nov 2020 11:00:00 +0100</pubDate>
+        <category>Mail, Kalender og webmail</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=2C3V</link>
     </item>
   <item>
-    <title>Kæmpestore problemer</title>
+    <title>Webmail loader ikke</title>
         <author>
         Begyndte:
         </author>
         <description>
         
         UDE AF DRIFT | 
-        Mere bøvl| 
-        Beskedkode: 3G76
+        Vi kan konstatere at der stadig er problemer. Vi siger til hvis...| 
+        Beskedkode: 2C3V
         </description>
         <pubDate>
-        Thu, 17 Sep 2020 11:00:00 +0200</pubDate>
+        Sun, 01 Nov 2020 11:00:00 +0100</pubDate>
+        <category>Mail, Kalender og webmail</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=2C3V</link>
+    </item>
+  <item>
+    <title>Vi skifter alle over til Hotmail</title>
+        <author>
+        Påbegyndes:
+        </author>
+        <description>
+        
+        PLANLAGTE ÆNDRINGER | 
+        Det er noget bøvl at køre email gennem kb.dk. Vi bruger da bare...| 
+        Beskedkode: XUYN
+        </description>
+        <pubDate>
+        Mon, 16 Nov 2020 11:00:00 +0100</pubDate>
+        <category>Mail, Kalender og webmail</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=XUYN</link>
+    </item>
+  <item>
+    <title>Genetableret forbindelse</title>
+        <author>
+        Løst:
+        </author>
+        <description>
+        
+        LØSTE PROBLEMER | 
+        Der har været udfald på netværket visse steder, men det er løst...| 
+        Beskedkode: JYKM
+        </description>
+        <pubDate>
+        Tue, 03 Nov 2020 21:10:00 +0100</pubDate>
         <category>Netværk</category>
-        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=3G76</link>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=JYKM</link>
     </item>
   <item>
     <title>Store opdateringer</title>
@@ -113,7 +177,7 @@
         <description>
         
         LØSTE PROBLEMER | 
-        Sagen er løst og nu lukketOmlægningen er nu fundet sted.| 
+        Sagen er løst og nu lukket Omlægningen er nu fundet sted.| 
         Beskedkode: BY3Q
         </description>
         <pubDate>
@@ -145,13 +209,61 @@
         <description>
         
         LØSTE PROBLEMER | 
-        Sagen er løst og nu lukketVi gjorde det!| 
+        Sagen er løst og nu lukket Vi gjorde det!| 
         Beskedkode: M9RT
         </description>
         <pubDate>
         Wed, 14 Oct 2020 11:00:00 +0200</pubDate>
         <category>Publikums-pc’ere</category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=M9RT</link>
+    </item>
+  <item>
+    <title>Opdatering af computere</title>
+        <author>
+        Påbegyndes:
+        </author>
+        <description>
+        
+        PLANLAGTE ÆNDRINGER | 
+        VI opgraderer omsider til Windows 95| 
+        Beskedkode: KQRQ
+        </description>
+        <pubDate>
+        Fri, 06 Nov 2020 11:00:00 +0100</pubDate>
+        <category>Publikums-pc’ere</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=KQRQ</link>
+    </item>
+  <item>
+    <title>Diverse problemer</title>
+        <author>
+        Begyndte:
+        </author>
+        <description>
+        
+        UDE AF DRIFT | 
+        Det virker slet ikke.| 
+        Beskedkode: SVTA
+        </description>
+        <pubDate>
+        Sun, 01 Nov 2020 04:12:00 +0100</pubDate>
+        <category>Publikums-pc’ere</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=SVTA</link>
+    </item>
+  <item>
+    <title>Diverse problemer</title>
+        <author>
+        Begyndte:
+        </author>
+        <description>
+        
+        UDE AF DRIFT | 
+        Det virker stadig ikke.| 
+        Beskedkode: SVTA
+        </description>
+        <pubDate>
+        Sun, 01 Nov 2020 04:12:00 +0100</pubDate>
+        <category>Publikums-pc’ere</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=SVTA</link>
     </item>
   <item>
     <title>Intet nyt er godt nyt</title>
@@ -164,7 +276,7 @@
         Beskedkode: 6UDN
         </description>
         <pubDate>
-        Thu, 29 Oct 2020 15:59:24 +0100</pubDate>
+        Thu, 05 Nov 2020 12:00:18 +0100</pubDate>
         <category>Bibliotekssystemet</category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=6UDN</link>
     </item>
@@ -179,41 +291,70 @@
         Beskedkode: 6UDN
         </description>
         <pubDate>
-        Thu, 29 Oct 2020 15:59:24 +0100</pubDate>
+        Thu, 05 Nov 2020 12:00:18 +0100</pubDate>
         <category>Bibliotekssystemet</category>
         <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=6UDN</link>
     </item>
   <item>
-    <title>test emne</title>
+    <title>ALMA</title>
         <author>
-        Løst:
         </author>
         <description>
         
-        LØSTE PROBLEMER | 
-        Sagen er løst og nu lukketOverstået| 
-        Beskedkode: TB8Q
+        GENEREL INFORMATION | 
+        Vi bruger fortsat ALMA som bibliotekssystem.| 
+        Beskedkode: 8WUC
         </description>
         <pubDate>
-        Wed, 30 Sep 2020 13:00:00 +0200</pubDate>
+        Thu, 05 Nov 2020 12:00:18 +0100</pubDate>
         <category>Bibliotekssystemet</category>
-        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=TB8Q</link>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=8WUC</link>
     </item>
   <item>
-    <title>Test - løst problem</title>
+    <title>ALMA</title>
         <author>
-        Løst:
         </author>
         <description>
         
-        LØSTE PROBLEMER | 
-        Lorem ipsum dolor sit amet.I dette tilfælde er der ikke brugt ret...| 
-        Beskedkode: Y3BK
+        GENEREL INFORMATION | 
+        Det er stadig tilfældet.| 
+        Beskedkode: 8WUC
         </description>
         <pubDate>
-        Fri, 11 Sep 2020 14:00:00 +0200</pubDate>
+        Thu, 05 Nov 2020 12:00:18 +0100</pubDate>
+        <category>Bibliotekssystemet</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=8WUC</link>
+    </item>
+  <item>
+    <title>Endnu en informationsbesked</title>
+        <author>
+        </author>
+        <description>
+        
+        GENEREL INFORMATION | 
+        Denne omhandler brugerdatabasen.| 
+        Beskedkode: 3388
+        </description>
+        <pubDate>
+        Thu, 05 Nov 2020 12:00:18 +0100</pubDate>
+        <category>Brugerdatabasen</category>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=3388</link>
+    </item>
+  <item>
+    <title>Kæmpestore problemer</title>
+        <author>
+        Begyndte:
+        </author>
+        <description>
+        
+        UDE AF DRIFT | 
+        Mere bøvl| 
+        Beskedkode: 3G76
+        </description>
+        <pubDate>
+        Thu, 17 Sep 2020 11:00:00 +0200</pubDate>
         <category>Netværk</category>
-        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=Y3BK</link>
+        <link>https://kbintern.sharepoint.com/sites/sigfred/SitePages/Lorem-ipsum.aspx?driftsbesked=3G76</link>
     </item>
   </channel>
 
